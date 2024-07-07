@@ -22,16 +22,11 @@ function check_signup_errors(){
 
 function signup_inputs(){
  
-    //check if the user has entered any data and if the username is not taken 
-    if(isset($_SESSION["signup_data"]["username"])){
-        echo "username is ok";
-        
-    }
+
     if(isset($_SESSION["signup_data"]["username"]) && empty($_SESSION["errors_signup"]["username_taken"])){
         echo '<input type="text" name="username" placeholder="Username" value= "'.  htmlspecialchars($_SESSION["signup_data"]["username"]) . '">';
     }
     else { //if the user has not entered any data or the username is taken
-        echo "something wrong with the username";
         echo '<input type="text" name="username" placeholder="Username">';
     }
 
